@@ -40,7 +40,7 @@ public class Move : MonoBehaviour
         {
             if (Jump <= 1)
             {
-            JumpB = true;
+                JumpB = true;
             }
             JumpCooldown -= 0.06f;
         }
@@ -83,12 +83,15 @@ public class Move : MonoBehaviour
     {
         if (groundChecker.isGrounded == true)
         {
-          Jump = 1;
-            JumpCooldown = 1f;
+            Jump = 1;
+            if (Input.GetButtonUp("Jump"))
+            {
+                JumpCooldown = 1f;
+            }
         }
         if (Input.GetButtonDown("Jump"))
         {
-            Jump = Jump-1;
-        }  
+            Jump = Jump - 1;
+        }
     }
-} 
+}
