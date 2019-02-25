@@ -38,7 +38,7 @@ public class Move : MonoBehaviour
 
         if (Input.GetButton("Jump"))
         {
-            if (Jump == 1)
+            if (Jump <= 1)
             {
                 JumpB = true;
             }
@@ -80,13 +80,15 @@ public class Move : MonoBehaviour
         }
     }
     void JumpAmount()
-    {if (JumpB == false && groundChecker.isGrounded == true)
-        {
-            JumpCooldown = 1f;
-        }
+    {
         if (groundChecker.isGrounded == true)
         {
-            Jump = 1;        }
+            Jump = 1;
+            if (Input.GetButtonUp("Jump"))
+            {
+                JumpCooldown = 1f;
+            }
+        }
         if (Input.GetButtonDown("Jump"))
         {
             Jump = Jump - 1;
