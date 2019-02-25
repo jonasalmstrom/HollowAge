@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - EnemyBorder
+  - Ground
+  - Damage
+  - Enemy
+  - Weapon
+  - HealingObject
+  - ShowOnPaused
+  - CheckPoint
+  - GM
+  - ShowOnDeath
   layers:
   - Default
   - TransparentFX
@@ -13,10 +23,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - PlayerHitDetection
+  - Player
+  - EnemyBorder
+  - Enemy
   - 
   - 
   - 
