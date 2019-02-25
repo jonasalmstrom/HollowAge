@@ -24,7 +24,6 @@ public class PlayerHealth : MonoBehaviour
             playerHealth -= 1;
             Debug.Log(string.Format("Health {0}", playerHealth));
 
-            playerDamagedRend.color = new Color(1, 0, 0);
 
             if (playerHealth <= 0)
             {
@@ -35,10 +34,6 @@ public class PlayerHealth : MonoBehaviour
             lifeHeart.transform.localPosition = new Vector2(playerHealth * -0.5f - 2.5f, 3.5f);
             lifeHeart.transform.localScale = new Vector2(playerHealth, 1);
 
-        }
-        else
-        {
-            playerDamagedRend.color = new Color(1, 1, 1);
         }
 
         if (_collision.gameObject.tag == "HealingObject")
@@ -50,7 +45,6 @@ public class PlayerHealth : MonoBehaviour
             }
             Debug.Log(string.Format("Health {0}", playerHealth));
 
-            playerDamagedRend.color = new Color(0, 0.5f, 0);
 
             if (playerHealth <= 0)
             {
@@ -62,10 +56,6 @@ public class PlayerHealth : MonoBehaviour
             lifeHeart.transform.localPosition = new Vector2(playerHealth * -0.5f - 2.5f, 3.5f);
             lifeHeart.transform.localScale = new Vector2(playerHealth, 1);
 
-        }
-        else
-        {
-            playerDamagedRend.color = new Color(1, 1, 1);
         }
     }
 
