@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SebbeTest.unity
     guid: 5897cf3698d3266428fbf988629f04ab
+  - enabled: 1
+    path: Assets/Scenes/SebbeTest.unity
+    guid: 5897cf3698d3266428fbf988629f04ab
   m_configObjects: {}
