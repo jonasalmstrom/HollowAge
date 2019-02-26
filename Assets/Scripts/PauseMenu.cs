@@ -77,7 +77,7 @@ public class PauseMenu : MonoBehaviour
     //loads inputted level
     public void LoadMainMenu(string level)
     {
-        SceneManager.LoadScene("Main_Menu");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame()
