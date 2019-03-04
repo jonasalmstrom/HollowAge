@@ -19,8 +19,6 @@ public class EnemyKnockback : MonoBehaviour
     void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
-
-
         player = GameObject.FindWithTag("Player");
         playerTransform = player.GetComponent<Transform>();
     }
@@ -34,11 +32,14 @@ public class EnemyKnockback : MonoBehaviour
                 if (transform.position.x < playerTransform.position.x)
                 {
                     print("Right");
-                    rbody.velocity = new Vector2(Random.Range(-maxX, -minX), Random.Range(-maxY, -minY));
+                    rbody.velocity = new Vector2(Random.Range(-maxX, -minX), Random.Range(maxY, minY));
                 }
-                else
+
+                if (transform.position.x > playerTransform.position.x)
+                {
                     print("Left");
-                rbody.velocity = new Vector2(Random.Range(maxX, minX), Random.Range(maxY, minY));
+                    rbody.velocity = new Vector2(Random.Range(maxX, minX), Random.Range(maxY, minY));
+                }
             }
         }
 
