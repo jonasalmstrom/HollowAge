@@ -198,7 +198,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4792571704757736}
   - component: {fileID: 61763785595419854}
-  - component: {fileID: 114552658382193660}
+  - component: {fileID: 2054613020838900788}
   m_Layer: 8
   m_Name: FeetGrounded
   m_TagString: Untagged
@@ -246,7 +246,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.47116113, y: 0.041044176}
   m_EdgeRadius: 0
---- !u!114 &114552658382193660
+--- !u!114 &2054613020838900788
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -255,7 +255,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1125870876429374}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ebeb50db6ed7534aba1a2fd16b22a6b, type: 3}
+  m_Script: {fileID: 11500000, guid: fcd05f3be206d5347bafaef489b83642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isGrounded: 0
@@ -270,11 +270,11 @@ GameObject:
   - component: {fileID: 4889607958842098}
   - component: {fileID: 212725763317090972}
   - component: {fileID: 50092909420991358}
-  - component: {fileID: 114462548469575062}
   - component: {fileID: 274904691}
   - component: {fileID: 274904695}
   - component: {fileID: 51767973}
   - component: {fileID: 908643711}
+  - component: {fileID: 1519359661314930717}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -369,29 +369,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &114462548469575062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1366479688593022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07578c13e4451314796f2a6ca42e21d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Jump: 1
-  moveSpeed: 5
-  jumpSpeed: 11
-  DashTime: 0
-  DashSpeed: 2
-  DashStopp: 1
-  Cooldown: 2
-  Dash: 1
-  JumpB: 0
-  JumpCooldown: 1.1
-  groundChecker: {fileID: 114552658382193660}
 --- !u!60 &274904691
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -470,6 +447,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1519359661314930717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366479688593022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e5c3f6f7533b4d4ab48b1fac73b0951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Jump: 1
+  moveSpeed: 5
+  jumpSpeed: 11
+  DashTime: 0
+  DashSpeed: 2
+  DashStopp: 1
+  Cooldown: 2
+  Dash: 1
+  JumpB: 0
+  JumpCooldown: 1.1
+  groundChecker: {fileID: 2054613020838900788}
 --- !u!1001 &4618785903554777552
 PrefabInstance:
   m_ObjectHideFlags: 0
