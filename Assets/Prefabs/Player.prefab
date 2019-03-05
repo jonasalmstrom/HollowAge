@@ -233,7 +233,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0115840435, y: -0.33654854}
+  m_Offset: {x: -0.009141922, y: -0.4722456}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -244,7 +244,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.47116113, y: 0.041044176}
+  m_Size: {x: 0.32047987, y: 0.035918415}
   m_EdgeRadius: 0
 --- !u!114 &2054613020838900788
 MonoBehaviour:
@@ -396,10 +396,10 @@ PolygonCollider2D:
     m_Paths:
     - - {x: 0.26699626, y: -0.2744732}
       - {x: 0.08883691, y: 0.4332835}
-      - {x: -0.16789126, y: 0.42712092}
-      - {x: -0.2545247, y: -0.3038653}
-      - {x: -0.21186113, y: -0.47021773}
-      - {x: 0.018309593, y: -0.47265148}
+      - {x: -0.26083994, y: -0.30280173}
+      - {x: -0.19037104, y: -0.44111526}
+      - {x: 0.17310214, y: -0.4420293}
+      - {x: 0.25208616, y: -0.28967786}
       - {x: 0.15615189, y: -0.47561544}
 --- !u!114 &274904695
 MonoBehaviour:
@@ -425,7 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac16ba6ba7bc785429ac2254b41c29a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeHeart: {fileID: 0}
+  lifeHeart: {fileID: 1969256076}
   playerHealth: 3
   playerDamagedRend: {fileID: 212725763317090972}
 --- !u!95 &908643711
@@ -539,6 +539,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44e14488b0cfc9c4da5409604422800d, type: 3}
+--- !u!1 &1969256076 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4618785902827054940, guid: 44e14488b0cfc9c4da5409604422800d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4618785903554777552}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1969256077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4618785902827054941, guid: 44e14488b0cfc9c4da5409604422800d,
