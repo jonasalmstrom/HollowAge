@@ -1,49 +1,50 @@
-﻿//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-//public class PlayerAttack : MonoBehaviour
-//{
+public class PlayerAttack : MonoBehaviour
+{
 
-//    GameObject[] playerAttackObject;
+    GameObject[] playerAttackObject;
 
-//    // Start is called before the first frame update
-//    void Start()
-//    {
-//        playerAttackObject = GameObject.FindGameObjectsWithTag("Weapon");
-//        HideSwordOnAttack();
-//    }
+    // Start is called before the first frame update
+    void Start()
+    {
+        playerAttackObject = GameObject.FindGameObjectsWithTag("Weapon");
+        HideSwordOnAttack();
+    }
 
-//    // Update is called once per frame
-//    void Update()
-//    {
-//        print("1");
+    // Update is called once per frame
+    void Update()
+    {
 
-//        if (Input.GetKey(KeyCode.C))
-//        {
-//            print("Hit!");
-//            ShowSwordOnAttack();
-//        }
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            print("Hit!");
+            ShowSwordOnAttack();
+        }
+        else
+            HideSwordOnAttack();
 
-//    }
+    }
 
-//    public void OnTriggerEnter2D(Collider2D collision)
-//    {
-//    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+    }
 
-//    public void ShowSwordOnAttack()
-//    {
-//        foreach (GameObject g in playerAttackObject)
-//        {
-//            g.SetActive(true);
-//        }
-//    }
+    public void ShowSwordOnAttack()
+    {
+        foreach (GameObject g in playerAttackObject)
+        {
+            g.SetActive(true);
+        }
+    }
 
-//    public void HideSwordOnAttack()
-//    {
-//        foreach (GameObject g in playerAttackObject)
-//        {
-//            g.SetActive(false);
-//        }
-//    }
-//}
+    public void HideSwordOnAttack()
+    {
+        foreach (GameObject g in playerAttackObject)
+        {
+            g.SetActive(false);
+        }
+    }
+}
