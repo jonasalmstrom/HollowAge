@@ -25,21 +25,20 @@ public class EnemyKnockback : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            if (collision.tag == "Weapon")
-            {
-                if (transform.position.x < playerTransform.position.x)
-                {
-                    print("Right");
-                    rbody.velocity = new Vector2(Random.Range(-maxX, -minX), Random.Range(maxY, minY));
-                }
 
-                if (transform.position.x > playerTransform.position.x)
-                {
-                    print("Left");
-                    rbody.velocity = new Vector2(Random.Range(maxX, minX), Random.Range(maxY, minY));
-                }
+        if (collision.tag == "Weapon")
+        {
+            
+            if (transform.position.x < playerTransform.position.x)
+            {
+                print("Right");
+                rbody.velocity = new Vector2(Random.Range(-maxX, -minX), Random.Range(maxY, minY));
+            }
+
+            if (transform.position.x > playerTransform.position.x)
+            {
+                print("Left");
+                rbody.velocity = new Vector2(Random.Range(maxX, minX), Random.Range(maxY, minY));
             }
         }
 
