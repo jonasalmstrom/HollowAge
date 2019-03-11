@@ -18,7 +18,7 @@ public class Move : MonoBehaviour
     public bool JumpB;
     public float JumpCooldown = 1.1f;
     public GroundChecker groundChecker;
-
+    public GameObject player;
 
     //The body one wish to move when one inputs a directional button//
     private Rigidbody2D rbody;
@@ -35,6 +35,17 @@ public class Move : MonoBehaviour
         rbody.velocity = new Vector2
            (Input.GetAxisRaw("Horizontal") * moveSpeed,
             rbody.velocity.y);
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            transform.Rotate(0, -180, 0, Space.Self);
+        }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            transform.Rotate(0, 180, 0, Space.Self);
+        }
+
 
         if (Input.GetButton("Jump"))
         {
