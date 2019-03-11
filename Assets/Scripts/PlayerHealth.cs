@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public GameObject lifeHeart;
+    public GameObject player;
     public int playerHealth = 3;
     public SpriteRenderer playerDamagedRend;
     GameObject[] deathMenuObjects;
@@ -55,28 +56,18 @@ public class PlayerHealth : MonoBehaviour
                 HideDeathMenu();
             lifeHeart.transform.localPosition = new Vector2(playerHealth * -0.5f - 2.5f, 3.5f);
             lifeHeart.transform.localScale = new Vector2(playerHealth, 1);
-
+            
         }
     }
 
     public void HealPlayer()
     {
-
         playerHealth += 1;
         if (playerHealth >= 3)
         {
             playerHealth = 3;
         }
         Debug.Log(string.Format("Health {0}", playerHealth));
-
-
-        if (playerHealth <= 0)
-        {
-            ShowDeathMenu();
-            print("Death Menu");
-        }
-        else
-            HideDeathMenu();
         lifeHeart.transform.localPosition = new Vector2(playerHealth * -0.5f - 2.5f, 3.5f);
         lifeHeart.transform.localScale = new Vector2(playerHealth, 1);
     }

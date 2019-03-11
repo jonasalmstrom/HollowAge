@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class HealthPotionScript : MonoBehaviour
 {
+    //public PlayerHealth healOnTouch;
+    private Animation anim;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.gameObject.tag == "Player")
         {
+            anim.Play("PlayerGetHealthAnim");
             GameObject Player = GameObject.Find("Player");
-            PlayerHealth playerScript = Player.GetComponent<PlayerHealth>();
-            playerScript.playerHealth += 1;
+            PlayerHealth other = (PlayerHealth)Player.GetComponent(typeof(PlayerHealth));
+            other.HealPlayer();
 
             Destroy(gameObject);
         }

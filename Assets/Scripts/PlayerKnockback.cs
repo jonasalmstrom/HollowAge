@@ -1,59 +1,47 @@
-﻿//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-//public class PlayerKnockback : MonoBehaviour
-//{
+public class PlayerKnockback : MonoBehaviour
+{
 
-//    public float maxX;
-//    public float minX;
-//    public float maxY;
-//    public float minY;
+    public float maxX;
+    public float minX;
+    public float maxY;
+    public float minY;
 
-//    private GameObject player;
-//    private Transform playerTransform;
-//    private Rigidbody2D rbody;
+    private GameObject enemy;
+    private Transform enemyTransform;
+    private Rigidbody2D rbody;
 
-//    // Start is called before the first frame update
-//    void Start()
-//    {
-//        rbody = GetComponent<Rigidbody2D>();
+    // Start is called before the first frame update
+
+    void Start()
+    {
+        rbody = GetComponent<Rigidbody2D>();
+        enemy = GameObject.FindWithTag("Damage");
+        enemyTransform = enemy.GetComponent<Transform>();
+    }
+
+    public void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Damage")
+        {
+
+            if (transform.position.x < enemyTransform.position.x)
+            {
+                print("Right");
+                rbody.velocity = new Vector2(Random.Range(-maxX, -minX), Random.Range(maxY, minY));
+            }
+
+            if (transform.position.x > enemyTransform.position.x)
+            {
+                print("Left");
+                rbody.velocity = new Vector2(Random.Range(maxX, minX), Random.Range(maxY, minY));
+            }
+        }
+
+    }
 
 
-//        player = GameObject.FindWithTag("Player");
-//        playerTransform = player.GetComponent<Transform>();
-//    }
-
-//    private void OnTriggerEnter2D(Collider2D collision)
-//    {
-//        if (collision.tag == "<ENTER_TAG_HERE>")
-//        {
-//            if (transform.position.x < playerTransform.position.x)
-//            {
-//                print("Right");
-//                rbody.velocity = new Vector2(Random.Range(-maxX, -minX), Random.Range(-maxY, -minY));
-//            }
-//            else
-//                print("Left");
-//            rbody.velocity = new Vector2(Random.Range(maxX, minX), Random.Range(maxY, minY));
-//        }
-//    }
-
-//    //TESTRUN ta bort i spel senare
-//    private void Update()
-//    {
-//        if (Input.GetKeyDown(KeyCode.L))
-//        {
-//            if (transform.position.x < playerTransform.position.x)
-//            {
-//                print("Right");
-//                rbody.velocity = new Vector2(Random.Range(-maxX, -minX), Random.Range(maxY, minY));
-//            }
-//            else
-//            {
-//                print("Left");
-//                rbody.velocity = new Vector2(Random.Range(maxX, minX), Random.Range(maxY, minY));
-//            }
-//        }
-//    }
-//}
+}
