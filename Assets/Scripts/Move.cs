@@ -20,6 +20,8 @@ public class Move : MonoBehaviour
     public GroundChecker groundChecker;
     public GameObject player;
 
+    public bool lookright = false;
+    public float move = 1f;
     //The body one wish to move when one inputs a directional button//
     private Rigidbody2D rbody;
 
@@ -36,14 +38,15 @@ public class Move : MonoBehaviour
            (Input.GetAxisRaw("Horizontal") * moveSpeed,
             rbody.velocity.y);
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) && lookright == false)
         {
-            transform.Rotate(0, -180, 0, Space.Self);
+            Flip();
+
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) && lookright == true)
         {
-            transform.Rotate(0, 180, 0, Space.Self);
+            Flip();
         }
 
 
@@ -102,5 +105,16 @@ public class Move : MonoBehaviour
         {
             Jump = Jump - 1;
         }
+    }
+
+    private void Flip()
+    {
+        // Switch the way the player is labelled as facing.
+        lookright = !lookright;
+
+        // Multiply the player's x local scale by -1.
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
 }
