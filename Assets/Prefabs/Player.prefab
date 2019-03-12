@@ -173,7 +173,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1125870876429374}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ebeb50db6ed7534aba1a2fd16b22a6b, type: 3}
+  m_Script: {fileID: 11500000, guid: fcd05f3be206d5347bafaef489b83642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isGrounded: 0
@@ -340,7 +340,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac16ba6ba7bc785429ac2254b41c29a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeHeart: {fileID: 1969256076}
+  lifeHeart: {fileID: 0}
+  player: {fileID: 0}
   playerHealth: 3
   playerDamagedRend: {fileID: 212725763317090972}
 --- !u!95 &908643711
@@ -400,9 +401,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891a3fdcdc346aa48a914ce9e960f14f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1969256076 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4618785902827054940, guid: 44e14488b0cfc9c4da5409604422800d,
-    type: 3}
-  m_PrefabInstance: {fileID: 4618785903554777552}
-  m_PrefabAsset: {fileID: 0}

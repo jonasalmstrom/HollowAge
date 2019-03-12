@@ -61,7 +61,6 @@ public class PlayerHealth : MonoBehaviour
             playerHealth = 3;
         }
         Debug.Log(string.Format("Health {0}", playerHealth));
-        lifeHeart.transform.localPosition = new Vector2(playerHealth * -0.5f - 2.5f, 3.5f);
         lifeHeart.transform.localScale = new Vector2(playerHealth, 1);
     }
 

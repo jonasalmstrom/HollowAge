@@ -7,13 +7,13 @@ public class PlayerGroundParticle : MonoBehaviour
     public ParticleSystem groundParticle;
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         if (collision.gameObject.tag == "Ground")
         {
-            Instantiate(groundParticle);
-
-        }
+            Instantiate(groundParticle, transform.position, groundParticle.transform.rotation);
+        }     
     }
+  
 }
