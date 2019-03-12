@@ -39,14 +39,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (_collision.gameObject.tag == "HealingObject")
         {
-            playerHealth += 1;
-            if (playerHealth >= 3)
-            {
-                playerHealth = 3;
-            }
-            Debug.Log(string.Format("Health {0}", playerHealth));
-
-
+           
             if (playerHealth <= 0)
             {
                 ShowDeathMenu();
