@@ -9,6 +9,7 @@ public class AttackPlayer : MonoBehaviour
     public Animator Anime;
     public int Swing;
     public GroundChecker groundChecker;
+    public Rigidbody2D rbody;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class AttackPlayer : MonoBehaviour
         Anime = GetComponent<Animator>();
         Swing = 1;
         groundChecker = GetComponentInChildren<GroundChecker>();
+        rbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -53,6 +55,7 @@ public class AttackPlayer : MonoBehaviour
         {
             Swing = 1;
         }
+        Animation();
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -72,6 +75,41 @@ public class AttackPlayer : MonoBehaviour
         foreach (GameObject g in playerAttackObject)
         {
             g.SetActive(false);
+        }
+    }
+    void Animation()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Anime.SetTrigger("Jump");
+            Anime.ResetTrigger("JumpLand");
+        }
+        if (Input.GetKeyUp(KeyCode.Space) || rbody.velocity.y <= -0.1f)
+        {
+            Anime.SetTrigger("JumpPeak");
+            Anime.ResetTrigger("JumpLand");
+            Anime.ResetTrigger("Jump");
+        }
+        if (rbody.velocity.y == 0)
+        {
+            Anime.SetTrigger("JumpLand");
+            Anime.ResetTrigger("JumpPeak");
+        }
+        if (rbody.velocity.x >= 0 || rbody.velocity.x <= 0)
+        {
+            Anime.SetBool("Walk", true);
+        }
+        if (rbody.velocity.x == 0)
+        {
+            Anime.SetBool("Walk", false);
+        }
+        if (Move.dash == true)
+        {
+            Anime.SetBool("Dash", true);
+        }
+        if (Move.dash == false)
+        {
+            Anime.SetBool("Dash", false);
         }
     }
 }

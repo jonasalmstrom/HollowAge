@@ -18,12 +18,11 @@ public class Move : MonoBehaviour
     public bool JumpB;
     public float JumpCooldown = 1.1f;
     public GroundChecker groundChecker;
-    public Animator Anim;
     public float move;
     public bool Right;
     public float Flip;
     private Vector3 Fliper;
-
+    public static bool dash;
     //The body one wish to move when one inputs a directional button//
     private Rigidbody2D rbody;
 
@@ -31,7 +30,6 @@ public class Move : MonoBehaviour
     private void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
-        Anim = GetComponent<Animator>();
         Flip = 1;
         Fliper.x = Flip;
         Fliper.y = 1;
@@ -86,34 +84,6 @@ public class Move : MonoBehaviour
         }
         DashMove();
         JumpAmount();
-        Animation();
-    }
-    void Animation()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Anim.SetTrigger("Jump");
-            Anim.ResetTrigger("JumpLand");
-        }
-        if (Input.GetKeyUp(KeyCode.Space)||rbody.velocity.y<=-0.1f)
-        {
-            Anim.SetTrigger("JumpPeak");
-            Anim.ResetTrigger("JumpLand");
-            Anim.ResetTrigger("Jump");
-        }
-        if (rbody.velocity.y == 0)
-        {
-            Anim.SetTrigger("JumpLand");
-            Anim.ResetTrigger("JumpPeak");
-        }
-        if (rbody.velocity.x >= 0||rbody.velocity.x<=0)
-        {
-            Anim.SetBool("Walk",true);
-        }
-        if (rbody.velocity.x == 0)
-        {
-            Anim.SetBool("Walk", false);
-        }
     }
     void DashMove()
     {
@@ -121,7 +91,7 @@ public class Move : MonoBehaviour
         {
             DashTime = 0.0f;
             Dash = false;
-            Anim.SetBool("Dash", true);
+            dash = true;
         }
         else if (DashTime <= DashStopp)
         {
@@ -140,7 +110,7 @@ public class Move : MonoBehaviour
         }
         if (groundChecker.isGrounded==true && Dash == true)
         {
-            Anim.SetBool("Dash", false);
+            dash = false;
         }
     }
     void JumpAmount()
