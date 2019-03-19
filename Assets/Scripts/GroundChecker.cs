@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class GroundChecker : MonoBehaviour
 {
+    //The bool thet is checked to detirmen if one shall be able to jump//
     public bool isGrounded;
 
+    //If the player is grounded than set isGrounded to true//
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Ground")
-        {
-            isGrounded = true;
-        }
+        isGrounded = true;
     }
 
+    //If the player is not grounded than set isGrounded to false//
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Ground")
-        {
-            isGrounded = false;
-        }
+        isGrounded  = false;
     }
+
+
+
+
+
+
+
 }

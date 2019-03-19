@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Animations;
 public class Move : MonoBehaviour
 {
     //Change how many times one can jump//
@@ -18,7 +18,11 @@ public class Move : MonoBehaviour
     public bool JumpB;
     public float JumpCooldown = 1.1f;
     public GroundChecker groundChecker;
-
+    public Animator Anim;
+    public float move;
+    public bool Right;
+    public float Flip;
+    private Vector3 Fliper;
 
     //The body one wish to move when one inputs a directional button//
     private Rigidbody2D rbody;
@@ -27,15 +31,42 @@ public class Move : MonoBehaviour
     private void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
+        Anim = GetComponent<Animator>();
+        Flip = 1;
+        Fliper.x = Flip;
+        Fliper.y = 1;
+        Fliper.z = 1;
     }
 
     //Movement left<->right and the jump button//
     void Update()
     {
-        rbody.velocity = new Vector2
-           (Input.GetAxisRaw("Horizontal") * moveSpeed,
+        move = (Input.GetAxisRaw("Horizontal") * moveSpeed);
+        if (Mathf.Abs(move)>= 0f)
+        {
+            rbody.velocity = new Vector2(move,
             rbody.velocity.y);
-
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            Right = false;
+            Flip = -1;
+            Fliper.x=Flip;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            Right = true;
+            Flip = 1;
+            Fliper.x = Flip;
+        }
+        if (Right == false)
+        {
+            transform.localScale = Fliper ;
+        }
+        if (Right == true)
+        {
+            transform.localScale = Fliper;
+        } 
         if (Input.GetButton("Jump"))
         {
             if (Jump == 1)
@@ -55,6 +86,34 @@ public class Move : MonoBehaviour
         }
         DashMove();
         JumpAmount();
+        Animation();
+    }
+    void Animation()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Anim.SetTrigger("Jump");
+            Anim.ResetTrigger("JumpLand");
+        }
+        if (Input.GetKeyUp(KeyCode.Space)||rbody.velocity.y<=-0.1f)
+        {
+            Anim.SetTrigger("JumpPeak");
+            Anim.ResetTrigger("JumpLand");
+            Anim.ResetTrigger("Jump");
+        }
+        if (rbody.velocity.y == 0)
+        {
+            Anim.SetTrigger("JumpLand");
+            Anim.ResetTrigger("JumpPeak");
+        }
+        if (rbody.velocity.x >= 0||rbody.velocity.x<=0)
+        {
+            Anim.SetBool("Walk",true);
+        }
+        if (rbody.velocity.x == 0)
+        {
+            Anim.SetBool("Walk", false);
+        }
     }
     void DashMove()
     {
@@ -62,6 +121,7 @@ public class Move : MonoBehaviour
         {
             DashTime = 0.0f;
             Dash = false;
+            Anim.SetBool("Dash", true);
         }
         else if (DashTime <= DashStopp)
         {
@@ -77,6 +137,10 @@ public class Move : MonoBehaviour
         {
             Dash = true;
             Cooldown = 2;
+        }
+        if (groundChecker.isGrounded==true && Dash == true)
+        {
+            Anim.SetBool("Dash", false);
         }
     }
     void JumpAmount()
