@@ -49,11 +49,14 @@ public class AttackPlayer : MonoBehaviour
             Swing -= 1;
             Anime.SetTrigger("AttackExit");
         }
-        else
-            HideSwordOnAttack();
+        
+        
+        
+            
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             Swing = 1;
+            HideSwordOnAttack();
         }
         Animation();
     }

@@ -120,7 +120,8 @@ public class Move : MonoBehaviour
         }
         if (groundChecker.isGrounded == true)
         {
-            Jump = 1;        }
+            Jump = 1;
+        }
         if (Input.GetButtonDown("Jump"))
         {
             Jump = Jump - 1;
