@@ -50,8 +50,7 @@ public class AttackPlayer : MonoBehaviour
             Anime.SetTrigger("AttackExit");
         }
         
-        
-        
+                
             
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
