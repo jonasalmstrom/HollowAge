@@ -18,7 +18,11 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
 
+<<<<<<< HEAD
         if (Input.GetKey(KeyCode.L))
+=======
+        if (Input.GetKey(KeyCode.Mouse0))
+>>>>>>> Rikard1
         {
             print("Hit!");
             ShowSwordOnAttack();

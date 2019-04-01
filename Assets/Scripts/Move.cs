@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Animations;
 public class Move : MonoBehaviour
 {
     //Change how many times one can jump//
@@ -20,10 +20,18 @@ public class Move : MonoBehaviour
     //public float JumpHoldTime = 0.5f;
     //  private float JumpHoldingTime;
     public GroundChecker groundChecker;
+<<<<<<< HEAD
     public GameObject player;
 
     public bool lookright = false;
     public float move = 0f;
+=======
+    public float move;
+    public bool Right;
+    public float Flip;
+    private Vector3 Fliper;
+    public static bool dash;
+>>>>>>> Rikard1
     //The body one wish to move when one inputs a directional button//
     private Rigidbody2D rbody;
 
@@ -33,6 +41,7 @@ public class Move : MonoBehaviour
     private void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
+<<<<<<< HEAD
         anim = GetComponent<Animator>();
     }
 
@@ -42,15 +51,59 @@ public class Move : MonoBehaviour
 
         rbody.velocity = new Vector2(moveSpeed, rbody.velocity.x);
 
+=======
+        Flip = 1;
+        Fliper.x = Flip;
+        Fliper.y = 1;
+        Fliper.z = 1;
+>>>>>>> Rikard1
     }
 
     //Movement left<->right and the jump button//
     void Update()
     {
+<<<<<<< HEAD
 
         anim.SetFloat("Speed", Mathf.Abs(move));
 
         if (Input.GetKeyDown(KeyCode.D) && lookright == false)
+=======
+        move = (Input.GetAxisRaw("Horizontal") * moveSpeed);
+        if (Mathf.Abs(move)>= 0f)
+        {
+            rbody.velocity = new Vector2(move,
+            rbody.velocity.y);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            Right = false;
+            Flip = -1;
+            Fliper.x=Flip;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            Right = true;
+            Flip = 1;
+            Fliper.x = Flip;
+        }
+        if (Right == false)
+        {
+            transform.localScale = Fliper ;
+        }
+        if (Right == true)
+        {
+            transform.localScale = Fliper;
+        } 
+        if (Input.GetButton("Jump"))
+        {
+            if (Jump == 1)
+            {
+                JumpB = true;
+            }
+            JumpCooldown -= 0.06f;
+        }
+        if (JumpB == true && JumpCooldown >= 0.125f)
+>>>>>>> Rikard1
         {
             Flip();
 
@@ -100,6 +153,7 @@ public class Move : MonoBehaviour
         {
             DashTime = 0.0f;
             Dash = false;
+            dash = true;
         }
         else if (DashTime <= DashStopp)
         {
@@ -116,7 +170,12 @@ public class Move : MonoBehaviour
             Dash = true;
             DashCooldown = 2;
         }
+        if (groundChecker.isGrounded==true && Dash == true)
+        {
+            dash = false;
+        }
     }
+<<<<<<< HEAD
     //void JumpAmount()
     //{
     //    if (groundChecker.isGrounded == true)
@@ -134,5 +193,20 @@ public class Move : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+=======
+    void JumpAmount()
+    {if (JumpB == false && groundChecker.isGrounded == true)
+        {
+            JumpCooldown = 1f;
+        }
+        if (groundChecker.isGrounded == true)
+        {
+            Jump = 1;
+        }
+        if (Input.GetButtonDown("Jump"))
+        {
+            Jump = Jump - 1;
+        }
+>>>>>>> Rikard1
     }
 }
