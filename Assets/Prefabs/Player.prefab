@@ -39,7 +39,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565636950}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -117,6 +117,9 @@ GameObject:
   - component: {fileID: 4792571704757736}
   - component: {fileID: 61763785595419854}
   - component: {fileID: 196493453621196828}
+  - component: {fileID: 1865667830}
+  - component: {fileID: 1865667831}
+  - component: {fileID: 1865667832}
   m_Layer: 8
   m_Name: FeetGrounded
   m_TagString: Untagged
@@ -177,6 +180,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGrounded: 0
+--- !u!114 &1865667830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125870876429374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fc6e07a2be348b44b0457cddfbfc441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundParticle: {fileID: 6420726924006651777, guid: edca8a24b58a5a54ea7454c1fa3e4874,
+    type: 3}
+--- !u!114 &1865667831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125870876429374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f44d769107188042aa21042b4c65065, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundMoveParticle: {fileID: 1600427904746239915, guid: 685c0f0e7f80789439566486b02ca87b,
+    type: 3}
+--- !u!114 &1865667832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125870876429374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4132c86615670664ebc274c5f1293a2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundParticleLeave: {fileID: 5463360847528694342, guid: 8434f84319cf9c24787df5a97f0fe206,
+    type: 3}
 --- !u!1 &1366479688593022
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +237,8 @@ GameObject:
   - component: {fileID: 274904695}
   - component: {fileID: 51767973}
   - component: {fileID: 908643711}
-  - component: {fileID: 3369786578695806102}
+  - component: {fileID: 8946064385814667803}
+  - component: {fileID: 650353184}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -363,7 +409,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3369786578695806102
+--- !u!114 &8946064385814667803
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -372,20 +418,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1366479688593022}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07578c13e4451314796f2a6ca42e21d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 2dfc52b05b1dbbc4f873320ae1753e26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Jump: 1
-  moveSpeed: 5
-  jumpSpeed: 11
-  DashTime: 0
-  DashSpeed: 2
-  DashStopp: 1
-  Cooldown: 2
-  Dash: 1
-  JumpB: 0
-  JumpCooldown: 1.1
+  moveSpeed: 5.12
+  jumpForce: 10
   groundChecker: {fileID: 196493453621196828}
-  player: {fileID: 1366479688593022}
-  lookright: 0
-  move: 1
+  jumpTime: 0.25
+--- !u!114 &650353184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366479688593022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 891a3fdcdc346aa48a914ce9e960f14f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

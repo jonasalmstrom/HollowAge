@@ -17,6 +17,17 @@ public class PlayerHealth : MonoBehaviour
         HideDeathMenu();
     }
 
+    public void HealPlayer()
+    {
+        playerHealth += 1;
+        if (playerHealth >= 3)
+        {
+            playerHealth = 3;
+        }
+        Debug.Log(string.Format("Health {0}", playerHealth));
+        lifeHeart.transform.localScale = new Vector2(playerHealth, 1);
+    }
+
     public void OnCollisionEnter2D(Collision2D _collision)
     {
         if (_collision.gameObject.tag == "Damage")

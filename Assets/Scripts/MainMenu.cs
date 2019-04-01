@@ -9,13 +9,10 @@ public class MainMenu : MonoBehaviour
 
     public void StartTutorial()
     {
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("Level01");
     }
 
-    public void LoadSebbeTest()
-    {
-        SceneManager.LoadScene("SebbeTest");
-    }
+    
   
     public void ExitGameMainMenu()
     {
