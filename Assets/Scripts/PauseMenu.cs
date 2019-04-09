@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        pauseObjects = GameObject.FindGameObjectsWithTag("ShowOnPaused");
         GameObject Player = GameObject.Find("PauseMenuInGame");
         Time.timeScale = 1;
         HidePaused();
@@ -18,7 +19,6 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pauseObjects = GameObject.FindGameObjectsWithTag("ShowOnPaused");
 
         //uses the p button to pause and unpause the game
         if (Input.GetKeyDown(KeyCode.P))
@@ -35,13 +35,13 @@ public class PauseMenu : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             SceneManager.LoadScene(0);
             Debug.Log("SFSDd");
         }
 
-        if(Time.timeScale == 1)
+        if (Time.timeScale == 1)
         {
             HidePaused();
         }
