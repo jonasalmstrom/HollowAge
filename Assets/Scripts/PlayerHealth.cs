@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public int playerHealth = 3;
     public SpriteRenderer playerDamagedRend;
     GameObject[] deathMenuObjects;
-
+    public string lastLevel;
 
     private void Start()
     {
@@ -38,11 +38,9 @@ public class PlayerHealth : MonoBehaviour
 
             if (playerHealth <= 0)
             {
-                ShowDeathMenu();
-                print("Death Menu");
-
+                SceneManager.LoadScene("DeathMenuScene");                
             }
-            
+
             lifeHeart.transform.localScale = new Vector2(playerHealth, 1);
 
         }
@@ -56,15 +54,6 @@ public class PlayerHealth : MonoBehaviour
             }
             Debug.Log(string.Format("Health {0}", playerHealth));
 
-
-            if (playerHealth <= 0)
-            {
-                ShowDeathMenu();
-                print("Death Menu");
-            }
-            else
-                HideDeathMenu();
-           
             lifeHeart.transform.localScale = new Vector2(playerHealth, 1);
 
         }
