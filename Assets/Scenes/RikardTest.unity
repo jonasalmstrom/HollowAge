@@ -131,7 +131,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.023726642, y: 0.001977086}
+  m_Offset: {x: 0.023726642, y: -0.049538255}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -142,7 +142,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.70833576, y: 1.036556}
+  m_Size: {x: 0.70833576, y: 1.1395867}
   m_EdgeRadius: 0
 --- !u!114 &158811782
 MonoBehaviour:
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Jump: 1
   moveSpeed: 5
-  jumpSpeed: 11
+  jumpSpeed: 7
   DashTime: 0
   DashSpeed: 2
   DashStopp: 1
@@ -329,6 +329,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 212468444909523176, guid: ddeab8dd90d7b2e4991663f91f375d2d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b1576d1c2147d25488b6776457b6b26b,
+        type: 3}
+    - target: {fileID: 50429326892642422, guid: ddeab8dd90d7b2e4991663f91f375d2d,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50429326892642422, guid: ddeab8dd90d7b2e4991663f91f375d2d,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50429326892642422, guid: ddeab8dd90d7b2e4991663f91f375d2d,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddeab8dd90d7b2e4991663f91f375d2d, type: 3}
 --- !u!1 &1203545097
@@ -342,6 +363,7 @@ GameObject:
   - component: {fileID: 1203545100}
   - component: {fileID: 1203545099}
   - component: {fileID: 1203545098}
+  - component: {fileID: 1203545101}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -413,6 +435,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1203545101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203545097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0394983bc50ec641b1010070021ad1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 158811780}
+  smoothX: 0
+  smoothY: 0
 --- !u!1 &1527466497 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1125870876429374, guid: a3ced2f182377d9459a44036b47647f6,
@@ -521,6 +558,11 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 1.28
       objectReference: {fileID: 0}
+    - target: {fileID: 212725763317090972, guid: a3ced2f182377d9459a44036b47647f6,
+        type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1565636951, guid: a3ced2f182377d9459a44036b47647f6, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
@@ -569,6 +611,11 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 158811783}
+    - target: {fileID: 50092909420991358, guid: a3ced2f182377d9459a44036b47647f6,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 274904691, guid: a3ced2f182377d9459a44036b47647f6, type: 3}
     - {fileID: 0}
