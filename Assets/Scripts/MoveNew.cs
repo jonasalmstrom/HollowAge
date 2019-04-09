@@ -9,6 +9,7 @@ public class MoveNew : MonoBehaviour
     private float moveInput;
     public float highJumpForce;
     public float lowJumpForce;
+    
 
     private bool isGrounded;
     public GroundChecker groundChecker;
@@ -40,7 +41,7 @@ public class MoveNew : MonoBehaviour
     private void FixedUpdate()
     {
         moveInput = Input.GetAxisRaw("Horizontal");
-
+        
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
 
         if (rb.velocity.y < 0)
@@ -59,6 +60,7 @@ public class MoveNew : MonoBehaviour
         nextDash += Time.deltaTime;
 
         anim.SetFloat("Speed", Mathf.Abs(moveInput));
+        
 
         if (Input.GetKeyDown(KeyCode.D) && lookright == false)
         {
