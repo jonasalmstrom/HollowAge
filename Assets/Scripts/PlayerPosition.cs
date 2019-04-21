@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerPosition : MonoBehaviour
 {
-    private GameMaster gm;
+    private GameMaster playerStartPosition;
 
     private void Start()
     {
-        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
-        transform.position = gm.lastCheckPointPos;
+        playerStartPosition = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+        transform.position = playerStartPosition.lastCheckPointPos;
     }
 }

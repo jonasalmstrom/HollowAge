@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 50429326892642422}
   - component: {fileID: 114063577388929284}
   - component: {fileID: 604120100}
+  - component: {fileID: 529204074}
   m_Layer: 11
   m_Name: Goblin
   m_TagString: Damage
@@ -69,10 +70,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1984840043
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: be380b7c36f20964890eb02c8f70bae1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fd1f9cefc5d77ca4f91086a2f3b24076, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,7 +97,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.018535137, y: 0.09267771}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -107,7 +108,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5057192, y: 0.8146446}
   m_EdgeRadius: 0
 --- !u!50 &50429326892642422
 Rigidbody2D:
@@ -157,3 +158,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkHealth: 2
+--- !u!95 &529204074
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258512220067640}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 206761eddbfdd824993c0ae4b7d45117, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

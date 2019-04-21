@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class PlayerHealth : MonoBehaviour
     public int playerHealth = 3;
     public SpriteRenderer playerDamagedRend;
     GameObject[] deathMenuObjects;
-
+    public string lastLevel;
+    public Slider healthbar;
 
     private void Start()
     {
@@ -28,45 +30,38 @@ public class PlayerHealth : MonoBehaviour
         lifeHeart.transform.localScale = new Vector2(playerHealth, 1);
     }
 
+    public void DamagePlayer()
+    {
+        playerHealth -= 1;
+        Debug.Log(string.Format("Health {0}", playerHealth));
+
+
+        if (playerHealth <= 0)
+        {
+            SceneManager.LoadScene("DeathMenuScene");
+        }
+    }
+
+    public void Update()
+    {
+        healthbar.value = playerHealth;
+
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            playerHealth -= 1;
+        }
+    }
+
     public void OnCollisionEnter2D(Collision2D _collision)
     {
         if (_collision.gameObject.tag == "Damage")
         {
-            playerHealth -= 1;
-            Debug.Log(string.Format("Health {0}", playerHealth));
-
-
-            if (playerHealth <= 0)
-            {
-                ShowDeathMenu();
-                print("Death Menu");
-
-            }
-            
-            lifeHeart.transform.localScale = new Vector2(playerHealth, 1);
-
+            DamagePlayer();
         }
 
         if (_collision.gameObject.tag == "HealingObject")
         {
-            playerHealth += 1;
-            if (playerHealth >= 3)
-            {
-                playerHealth = 3;
-            }
-            Debug.Log(string.Format("Health {0}", playerHealth));
-
-
-            if (playerHealth <= 0)
-            {
-                ShowDeathMenu();
-                print("Death Menu");
-            }
-            else
-                HideDeathMenu();
-           
-            lifeHeart.transform.localScale = new Vector2(playerHealth, 1);
-
+            HealPlayer();
         }
     }
 

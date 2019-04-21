@@ -10,8 +10,9 @@ public class PauseMenu : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Time.timeScale = 1;
         pauseObjects = GameObject.FindGameObjectsWithTag("ShowOnPaused");
+        GameObject Player = GameObject.Find("PauseMenuInGame");
+        Time.timeScale = 1;
         HidePaused();
     }
 
@@ -33,12 +34,25 @@ public class PauseMenu : MonoBehaviour
                 HidePaused();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            SceneManager.LoadScene(0);
+            Debug.Log("SFSDd");
+        }
+
+        if (Time.timeScale == 1)
+        {
+            HidePaused();
+        }
     }
 
     //Reloads the Level
     public void Reload()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        HidePaused();
+        string s = PlayerPrefs.GetString("lvl");
+        SceneManager.LoadScene(s);
     }
 
     //controls the pausing of the scene
@@ -77,11 +91,13 @@ public class PauseMenu : MonoBehaviour
     //loads inputted level
     public void LoadMainMenu(string level)
     {
+        HidePaused();
         SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame()
     {
+        HidePaused();
         Application.Quit();
         print("quit");
     }

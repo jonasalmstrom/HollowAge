@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WalkingEnemyHP : MonoBehaviour
 {
+    public ParticleSystem enemyMinorBloodSplatter;
+    public ParticleSystem enemyBloodSplatter;
     public int walkHealth = 2;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -11,6 +13,7 @@ public class WalkingEnemyHP : MonoBehaviour
         if (collision.gameObject.tag == "Weapon")
         {
             walkHealth -= 1;
+            Instantiate(enemyMinorBloodSplatter, transform.position, enemyMinorBloodSplatter.transform.rotation);
             Debug.Log("weee");
         }
 
@@ -20,6 +23,7 @@ public class WalkingEnemyHP : MonoBehaviour
     {
         if (walkHealth <= 0)
         {
+            Instantiate(enemyBloodSplatter, transform.position, enemyBloodSplatter.transform.rotation);
             Destroy(gameObject);
         }
     }
