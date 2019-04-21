@@ -21,7 +21,7 @@ public class EnemyHorizontalMovement : MonoBehaviour
         Move();
     }
     //jag gör funktionen move för att det ska bli mer clean i scriptet och mer enkelt att se hur allting fungerar
-    void Move()
+    public void Move()
     {
         //om variabeln goLeft är true så sätter den på en velocity på rigibodyn åt vänster
         goLeft = !goLeft;

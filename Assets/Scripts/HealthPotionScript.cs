@@ -4,17 +4,26 @@ using UnityEngine;
 
 public class HealthPotionScript : MonoBehaviour
 {
+    public ParticleSystem heartParticlePlay;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        if (collision.gameObject.tag == "Player")
+        if (collision.tag == "Player")
         {
+            Debug.Log("CCCCCC");
+            Instantiate(heartParticlePlay, transform.position, heartParticlePlay.transform.rotation);
+
+
             GameObject Player = GameObject.Find("Player");
             PlayerHealth other = (PlayerHealth)Player.GetComponent(typeof(PlayerHealth));
-            other.HealPlayer();
-
+            other.playerHealth += 1;
             Destroy(gameObject);
-        }
+        }       
     }
+
+    //private void OnColliderEnter2D(Collision2D collision)
+    //{
+
+    //}
 }
