@@ -286,6 +286,18 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 1106665071}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &650353178 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8946064385814667803, guid: a3ced2f182377d9459a44036b47647f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1106665071}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650353175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dfc52b05b1dbbc4f873320ae1753e26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &650353182 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 50092909420991358, guid: a3ced2f182377d9459a44036b47647f6,
@@ -3777,6 +3789,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8946064385814667803, guid: a3ced2f182377d9459a44036b47647f6,
+        type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50092909420991358, guid: a3ced2f182377d9459a44036b47647f6,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4889607958842098, guid: a3ced2f182377d9459a44036b47647f6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.9504778
@@ -3825,10 +3847,13 @@ PrefabInstance:
       propertyPath: lifeHeart
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 50092909420991358, guid: a3ced2f182377d9459a44036b47647f6,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 7
+    - target: {fileID: 1125870876429374, guid: a3ced2f182377d9459a44036b47647f6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1565636953, guid: a3ced2f182377d9459a44036b47647f6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8946064385814667803, guid: a3ced2f182377d9459a44036b47647f6,
         type: 3}
@@ -3843,7 +3868,7 @@ PrefabInstance:
     - target: {fileID: 8946064385814667803, guid: a3ced2f182377d9459a44036b47647f6,
         type: 3}
       propertyPath: dashForce
-      value: 2000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8946064385814667803, guid: a3ced2f182377d9459a44036b47647f6,
         type: 3}
@@ -3870,13 +3895,40 @@ PrefabInstance:
       propertyPath: dashCooldown
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1125870876429374, guid: a3ced2f182377d9459a44036b47647f6, type: 3}
-      propertyPath: m_Layer
-      value: 8
+    - target: {fileID: 8946064385814667803, guid: a3ced2f182377d9459a44036b47647f6,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1565636953, guid: a3ced2f182377d9459a44036b47647f6, type: 3}
-      propertyPath: m_Enabled
+    - target: {fileID: 8946064385814667803, guid: a3ced2f182377d9459a44036b47647f6,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 6.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8946064385814667803, guid: a3ced2f182377d9459a44036b47647f6,
+        type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8946064385814667803, guid: a3ced2f182377d9459a44036b47647f6,
+        type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8946064385814667803, guid: a3ced2f182377d9459a44036b47647f6,
+        type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 650353178}
+    - target: {fileID: 8946064385814667803, guid: a3ced2f182377d9459a44036b47647f6,
+        type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnLanding
+      objectReference: {fileID: 0}
+    - target: {fileID: 8946064385814667803, guid: a3ced2f182377d9459a44036b47647f6,
+        type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1865667830, guid: a3ced2f182377d9459a44036b47647f6, type: 3}
       propertyPath: anim
@@ -3992,8 +4044,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1575476557
+  m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 7d7b5c9d05512184e9e6e30fc4f3dfb6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4601,8 +4653,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1575476557
+  m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 7d7b5c9d05512184e9e6e30fc4f3dfb6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

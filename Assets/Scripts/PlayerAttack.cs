@@ -20,7 +20,6 @@ public class PlayerAttack : MonoBehaviour
 
         if (Input.GetKey(KeyCode.L))
         {
-            print("Hit!");
             ShowSwordOnAttack();
         }
         else
