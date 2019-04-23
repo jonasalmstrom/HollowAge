@@ -15,10 +15,7 @@ public class LoadNextLevel : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            LoadNextSceneIndex();
-        }
+
     }
 
     public void LoadNextSceneIndex()
