@@ -17,6 +17,7 @@ TagManager:
   - BG
   - PauseMenuController
   - TeleportingObject
+  - CoinTracker
   layers:
   - Default
   - TransparentFX
