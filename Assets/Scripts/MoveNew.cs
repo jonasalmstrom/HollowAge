@@ -29,11 +29,12 @@ public class MoveNew : MonoBehaviour
     private Rigidbody2D rb;
     private bool isGrounded;
     private float jumpTimeCounter;
-    private bool isJumping;
+    public bool isJumping;
     private bool allowJump;
     private bool allowHighJump;
     private bool allowDash;
     private bool jum;
+    public bool isDashing = false;
 
     private void Awake()
     {
@@ -143,14 +144,23 @@ public class MoveNew : MonoBehaviour
             if (lookright)
             {
                 rb.AddForce(Vector2.right * dashForce, ForceMode2D.Impulse);
+                anim.SetBool("IsDashing", true);
+                isDashing = true;
                 allowDash = false;
             }
             else
             {
                 rb.AddForce(-Vector2.right * dashForce, ForceMode2D.Impulse);
+                anim.SetBool("IsDashing", true);
                 allowDash = false;
+                isDashing = true;
             }
 
+        }
+        else
+        {
+            anim.SetBool("IsDashing", false);
+            isDashing = false;
         }
     }
 
