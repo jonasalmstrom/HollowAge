@@ -84,6 +84,7 @@ public class MoveNew : MonoBehaviour
         {
             allowJump = true;
             anim.SetBool("IsJumping", true);
+
         }
 
         Jumps();

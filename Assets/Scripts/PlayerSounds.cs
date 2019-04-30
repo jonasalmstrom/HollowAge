@@ -12,7 +12,7 @@ public class PlayerSounds : MonoBehaviour
 
     private AudioSource source;
     private MoveNew mw;
-    private GroundChecker gc;
+    public GroundChecker gc;
     private bool canJump;
 
     private void Start()
@@ -28,6 +28,7 @@ public class PlayerSounds : MonoBehaviour
         if (mw.isJumping == true && canJump == true)
         {
             source.PlayOneShot(jump);
+
             canJump = false;
         }
         if (mw.isJumping == false)
@@ -35,18 +36,11 @@ public class PlayerSounds : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A) && step == true || Input.GetKey(KeyCode.D) && step == true)
         {
-            print("wwww");
             if (gc.isGrounded == true)
             {
-                print("eeee");
-                if (canJump == false)
-                {
-                    source.PlayOneShot(running);
-                    step = false;
-                    Invoke("StepTrue", frash);
-                    print("yyy");
-                }
-
+                source.PlayOneShot(running);
+                step = false;
+                Invoke("StepTrue", frash);
             }
         }
 
