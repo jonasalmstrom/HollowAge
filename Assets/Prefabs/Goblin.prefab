@@ -157,6 +157,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9402559defa53944af3d5a8d49169c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyMinorBloodSplatter: {fileID: 3809475754495388339, guid: 2ed22fb889b0f8c45bcac8cba43745e1,
+    type: 3}
+  enemyBloodSplatter: {fileID: 1300707835625551980, guid: 55457a724c352bc4499080baf864f519,
+    type: 3}
   walkHealth: 2
 --- !u!95 &529204074
 Animator:
