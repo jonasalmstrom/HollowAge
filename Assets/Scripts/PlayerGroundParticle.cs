@@ -6,7 +6,7 @@ public class PlayerGroundParticle : MonoBehaviour
 {
     public ParticleSystem groundParticle;
 
-    public Animator anim;
+    private Animator anim;
 
     private void Start()
     {
