@@ -5,7 +5,10 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
 
-    GameObject[] playerAttackObject;
+    public GameObject[] playerAttackObject;
+    public GameObject attackSide;
+    public GameObject attackUp;
+    public GameObject attackDown;
 
     // Start is called before the first frame update
     void Start()
@@ -18,22 +21,35 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKey(KeyCode.L))
+        if (Input.GetKeyUp(KeyCode.L) && Input.GetKey(KeyCode.S))
         {
-
-            ShowSwordOnAttack();
+            ShowSwordOnAttackDown();
+        }
+        else if (Input.GetKeyUp(KeyCode.L) && Input.GetKey(KeyCode.W))
+        {
+            ShowSwordOnAttackUp();
+        }
+        else if (Input.GetKeyUp(KeyCode.L))
+        {
+            ShowSwordOnAttackSide();
         }
         else
             HideSwordOnAttack();
-
     }
 
-    public void ShowSwordOnAttack()
+    public void ShowSwordOnAttackSide()
     {
-        foreach (GameObject g in playerAttackObject)
-        {
-            g.SetActive(true);
-        }
+        attackSide.SetActive(true);
+    }
+
+    public void ShowSwordOnAttackUp()
+    {
+        attackUp.SetActive(true);
+    }
+
+    public void ShowSwordOnAttackDown()
+    {
+        attackDown.SetActive(true);
     }
 
     public void HideSwordOnAttack()
