@@ -5,14 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class DeathMenuScript : MonoBehaviour
 {
-    
+
     public static DeathMenuScript instance;
-    public string lvl;
+    public int lvl;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(instance == null)
+        DontDestroyOnLoad(gameObject);
+        if (instance == null)
         {
             instance = this;
         }
@@ -21,14 +22,8 @@ public class DeathMenuScript : MonoBehaviour
             Destroy(GameObject.FindGameObjectWithTag("PauseMenuController"));
         }
 
-        lvl = SceneManager.GetActiveScene().name;
+        PlayerPrefs.SetInt("lvl", SceneManager.GetActiveScene().buildIndex);
+        lvl = SceneManager.GetActiveScene().buildIndex;
 
-        PlayerPrefs.SetString("lvl", SceneManager.GetActiveScene().name);
-        DontDestroyOnLoad(gameObject);
-    }
-
-    public void DontDestroy()
-    {
-        DontDestroyOnLoad(gameObject);
     }
 }
