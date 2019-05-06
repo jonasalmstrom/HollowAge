@@ -18,4 +18,6 @@ public class Grass : MonoBehaviour
             anim.SetTrigger("GrassMove");
         }
     }
+
+    
 }
