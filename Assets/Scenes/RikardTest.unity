@@ -362,8 +362,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1203545100}
   - component: {fileID: 1203545099}
-  - component: {fileID: 1203545098}
   - component: {fileID: 1203545101}
+  - component: {fileID: 1203545098}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -622,8 +622,10 @@ PrefabInstance:
     - {fileID: 0}
     - {fileID: 274904695, guid: a3ced2f182377d9459a44036b47647f6, type: 3}
     - {fileID: 51767973, guid: a3ced2f182377d9459a44036b47647f6, type: 3}
-    - {fileID: 2054613020838900788, guid: a3ced2f182377d9459a44036b47647f6, type: 3}
-    - {fileID: 1519359661314930717, guid: a3ced2f182377d9459a44036b47647f6, type: 3}
-    - {fileID: 8946064385814667803, guid: a3ced2f182377d9459a44036b47647f6, type: 3}
-    - {fileID: 196493453621196828, guid: a3ced2f182377d9459a44036b47647f6, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: a3ced2f182377d9459a44036b47647f6, type: 3}
