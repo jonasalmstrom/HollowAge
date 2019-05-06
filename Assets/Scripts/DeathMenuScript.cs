@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class DeathMenuScript : MonoBehaviour
 {
+    
     public static DeathMenuScript instance;
     public string lvl;
 
@@ -23,6 +24,11 @@ public class DeathMenuScript : MonoBehaviour
         lvl = SceneManager.GetActiveScene().name;
 
         PlayerPrefs.SetString("lvl", SceneManager.GetActiveScene().name);
+        DontDestroyOnLoad(gameObject);
+    }
+
+    public void DontDestroy()
+    {
         DontDestroyOnLoad(gameObject);
     }
 }
