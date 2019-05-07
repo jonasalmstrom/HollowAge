@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &855220192084775086
+--- !u!1 &8768562956621838776
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 855220192084775085}
-  - component: {fileID: 855220192084775084}
-  - component: {fileID: 855220192084775087}
-  - component: {fileID: 855220192084775074}
+  - component: {fileID: 8768562956621838773}
+  - component: {fileID: 8768562956621838774}
+  - component: {fileID: 8768562956621838775}
+  - component: {fileID: 8768562956621838772}
   m_Layer: 0
-  m_Name: Fall Trap
-  m_TagString: Untagged
+  m_Name: RotatingTrap
+  m_TagString: Damage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &855220192084775085
+--- !u!4 &8768562956621838773
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 855220192084775086}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.45, y: -1.39, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 8768562956621838776}
+  m_LocalRotation: {x: -0.000700636, y: -0.07830038, z: -0.0089202225, w: 0.9968897}
+  m_LocalPosition: {x: 9.87, y: -3.22, z: -0.79}
+  m_LocalScale: {x: 1.3048, y: 1.125, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &855220192084775084
+  m_LocalEulerAnglesHint: {x: -0.16000001, y: -8.981001, z: -1.013}
+--- !u!212 &8768562956621838774
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 855220192084775086}
+  m_GameObject: {fileID: 8768562956621838776}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 73f8c8e3347e6de4cb025d8efb6a9766, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5897dbb1807fe8c4c9868d6a2b2e25a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -81,42 +81,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &855220192084775087
-BoxCollider2D:
+--- !u!114 &8768562956621838775
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 855220192084775086}
+  m_GameObject: {fileID: 8768562956621838776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c46f57a68a895a1488d4aeda857e5827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!60 &8768562956621838772
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8768562956621838776}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.004591346, y: 0.47750235}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.50459135, y: 0.022497632}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &855220192084775074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 855220192084775086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d0f21809b5627249833756355d825d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  otherSprite: {fileID: 21300000, guid: 976c56c57e58baf4a8dd4656340a13e2, type: 3}
+  m_Points:
+    m_Paths:
+    - - {x: 0.07634428, y: 0.26490498}
+      - {x: 0.01, y: 0.29}
+      - {x: -0.14, y: 0.29}
+      - {x: -0.19, y: 0.26}
+      - {x: -0.28, y: 0.17999999}
+      - {x: -0.28, y: -0.19}
+      - {x: -0.17999999, y: -0.26}
+      - {x: -0.13, y: -0.26999998}
+      - {x: 0, y: -0.35}
+      - {x: 0.0770965, y: -0.29246572}

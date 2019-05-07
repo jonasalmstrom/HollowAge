@@ -20,15 +20,12 @@ public class PlayerAttack : MonoBehaviour
 
         if (Input.GetKey(KeyCode.L))
         {
+
             ShowSwordOnAttack();
         }
         else
             HideSwordOnAttack();
 
-    }
-
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
     }
 
     public void ShowSwordOnAttack()

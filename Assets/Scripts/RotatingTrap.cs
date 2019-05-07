@@ -3,25 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RotatingTrap : MonoBehaviour
-    
 {
-    
-    private PlayerHealth pH;
-    
-   
+    // Start is called before the first frame update
     void Start()
     {
-        pH = gameObject.GetComponent<PlayerHealth>();
+        
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void Update()
     {
-        if (collision.gameObject.tag == "Player")
-        {
-            Debug.Log("aj");
-            pH.playerHealth-= 3;
-            
-        }
+        transform.Rotate(0, 0, 50 * Time.deltaTime); 
     }
 }
-
