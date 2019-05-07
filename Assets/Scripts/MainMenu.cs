@@ -15,4 +15,9 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
         print("Quit Game");
     }
+
+    public void Credits()
+    {
+        SceneManager.LoadScene("CreditsScene");
+    }
 }
