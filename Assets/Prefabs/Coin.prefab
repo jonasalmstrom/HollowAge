@@ -115,7 +115,8 @@ MonoBehaviour:
   coinPickupParticle: {fileID: 2329009014550367297, guid: 1f5f31e8e66de1e4184df9f24436f592,
     type: 3}
   coin: 1
-  coinSound: {fileID: 8300000, guid: 925f81757518b5b48abf9dde3d297d38, type: 3}
+  coinSound: {fileID: 8300000, guid: 9155866583c940f42909e2c103f7e708, type: 3}
+  waitOnDestroy: 10
 --- !u!82 &8831590747383189352
 AudioSource:
   m_ObjectHideFlags: 0

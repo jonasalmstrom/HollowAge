@@ -11,7 +11,7 @@ public class HealthPotionScript : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("CCCCCC");
+            
             Instantiate(heartParticlePlay, transform.position, heartParticlePlay.transform.rotation);
 
 

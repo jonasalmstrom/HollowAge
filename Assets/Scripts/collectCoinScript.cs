@@ -9,12 +9,14 @@ public class collectCoinScript : MonoBehaviour
     public ParticleSystem coinPickupParticle;
     public float coin = 1;
     public AudioClip coinSound;
-
+    
     private AudioSource source;
-
+   
+    public Transform cam;
     private void Start()
     {
-        source = GetComponent<AudioSource>();
+        source = gameObject.GetComponent<AudioSource>();
+       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -23,12 +25,11 @@ public class collectCoinScript : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
+            source.PlayOneShot(coinSound);
             Instantiate(coinPickupParticle, transform.position, coinPickupParticle.transform.rotation);
             Instantiate(coinPickupLightParticle, transform.position, coinPickupLightParticle.transform.rotation);
-            CoinTracker tracker = coinController.GetComponent<CoinTracker>();
-            tracker.totalCoins += coin;
+            AudioSource.PlayClipAtPoint(coinSound, cam.transform.position);
             Destroy(gameObject);
-            source.PlayOneShot(coinSound);
         }
     }
 }

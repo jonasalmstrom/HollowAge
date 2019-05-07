@@ -5,4 +5,5 @@ using UnityEngine;
 public class CoinTracker : MonoBehaviour
 {
     public float totalCoins;
+
 }

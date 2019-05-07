@@ -14,7 +14,7 @@ public class WalkingEnemyHP : MonoBehaviour
         {
             walkHealth -= 1;
             Instantiate(enemyMinorBloodSplatter, transform.position, enemyMinorBloodSplatter.transform.rotation);
-            Debug.Log("weee");
+            
         }
 
     }
