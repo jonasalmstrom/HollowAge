@@ -51,7 +51,8 @@ public class PauseMenu : MonoBehaviour
     public void Reload()
     {
         HidePaused();
-        string s = PlayerPrefs.GetString("lvl");
+        int s = PlayerPrefs.GetInt("lvl");
+        Debug.Log(s);
         SceneManager.LoadScene(s);
     }
 
