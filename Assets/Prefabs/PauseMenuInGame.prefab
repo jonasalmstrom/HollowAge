@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8065960363648435418}
   - component: {fileID: 8065960363648435421}
   - component: {fileID: 8065960363648435419}
-  - component: {fileID: 674403370}
   m_Layer: 0
   m_Name: PauseMenuInGame
   m_TagString: PauseMenuController
@@ -93,16 +92,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &674403370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8065960363648435420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e3ecae43fc933045b34c5521d41a4b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lvl: 0
