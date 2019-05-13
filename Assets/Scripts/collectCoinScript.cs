@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class collectCoinScript : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class collectCoinScript : MonoBehaviour
     public ParticleSystem coinPickupParticle;
     public float coin = 1;
     public AudioClip coinSound;
+    public Slider coinSlider;
     
     private AudioSource source;
    

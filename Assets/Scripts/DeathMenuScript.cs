@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class DeathMenuScript : MonoBehaviour
 {
 
+    public PlayerHealth PlayerHealth;
     public static DeathMenuScript instance;
     public int lvl;
 
@@ -22,8 +23,18 @@ public class DeathMenuScript : MonoBehaviour
             Destroy(GameObject.FindGameObjectWithTag("PauseMenuController"));
         }
 
-        PlayerPrefs.SetInt("lvl", SceneManager.GetActiveScene().buildIndex);
-        lvl = SceneManager.GetActiveScene().buildIndex;
+
+    }
+
+    private void Update()
+    {
+
+        if (PlayerHealth.playerHealth <= 0)
+        {
+
+            PlayerPrefs.SetInt("lvl", SceneManager.GetActiveScene().buildIndex);
+            lvl = SceneManager.GetActiveScene().buildIndex;
+        }
 
     }
 }
