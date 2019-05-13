@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     GameObject[] deathMenuObjects;
     public string lastLevel;
     public Slider healthbar;
+    //DeathMenuScript lvl;
 
     private void Start()
     {
@@ -39,6 +40,7 @@ public class PlayerHealth : MonoBehaviour
         if (playerHealth <= 0)
         {
             SceneManager.LoadScene("DeathMenuScene");
+            playerHealth = 3;
         }
     }
 
@@ -50,6 +52,7 @@ public class PlayerHealth : MonoBehaviour
         {
             playerHealth -= 1;
         }
+
     }
 
     public void OnCollisionEnter2D(Collision2D _collision)
