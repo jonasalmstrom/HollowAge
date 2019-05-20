@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level02.unity
     guid: 2464bb6539ebca8429f74c0b9cc62078
   - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: ed6937d9f507c45438954bb5f9d457ce
+  - enabled: 1
     path: Assets/Scenes/DeathMenuScene.unity
     guid: c4cc7b28afa0f954293f5ee66e47b2f8
   - enabled: 1

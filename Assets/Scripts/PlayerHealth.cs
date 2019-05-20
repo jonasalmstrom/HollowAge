@@ -12,12 +12,18 @@ public class PlayerHealth : MonoBehaviour
     GameObject[] deathMenuObjects;
     public string lastLevel;
     public Slider healthbar;
+    public DeathMenuScript DeathMenuScript;
+    public int lvlHP;
     //DeathMenuScript lvl;
 
     private void Start()
     {
+        DeathMenuScript.lvl = lvlHP;
         deathMenuObjects = GameObject.FindGameObjectsWithTag("ShowOnDeath");
         HideDeathMenu();
+
+        PlayerPrefs.SetInt("lvlHP", SceneManager.GetActiveScene().buildIndex);
+        lvlHP = PlayerPrefs.GetInt("lvlHP");
     }
 
     public void HealPlayer()
@@ -39,8 +45,10 @@ public class PlayerHealth : MonoBehaviour
 
         if (playerHealth <= 0)
         {
+            PlayerPrefs.SetInt("lvl", SceneManager.GetActiveScene().buildIndex);
+            print(PlayerPrefs.GetInt("lvl"));
+            //UnityEditor.EditorApplication.isPaused = true;
             SceneManager.LoadScene("DeathMenuScene");
-            playerHealth = 3;
         }
     }
 
@@ -48,11 +56,7 @@ public class PlayerHealth : MonoBehaviour
     {
         healthbar.value = playerHealth;
 
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            playerHealth -= 1;
-        }
-
+        DeathMenuScript.lvl = lvlHP;
     }
 
     public void OnCollisionEnter2D(Collision2D _collision)
