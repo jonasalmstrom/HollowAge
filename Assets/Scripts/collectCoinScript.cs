@@ -10,7 +10,7 @@ public class collectCoinScript : MonoBehaviour
     public ParticleSystem coinPickupParticle;
     public float coin = 1;
     public AudioClip coinSound;
-    public Slider coinSlider;
+    public CoinTracker cTracker;
     
     private AudioSource source;
    
@@ -27,6 +27,7 @@ public class collectCoinScript : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
+            cTracker.totalCoins += coin;
             source.PlayOneShot(coinSound);
             Instantiate(coinPickupParticle, transform.position, coinPickupParticle.transform.rotation);
             Instantiate(coinPickupLightParticle, transform.position, coinPickupLightParticle.transform.rotation);

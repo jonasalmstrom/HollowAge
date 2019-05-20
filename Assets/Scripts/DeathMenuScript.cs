@@ -28,13 +28,13 @@ public class DeathMenuScript : MonoBehaviour
 
     private void Update()
     {
+        print(lvl);
 
         if (PlayerHealth.playerHealth <= 0)
         {
-
             PlayerPrefs.SetInt("lvl", SceneManager.GetActiveScene().buildIndex);
-            lvl = SceneManager.GetActiveScene().buildIndex;
+            lvl = PlayerPrefs.GetInt("lvl");
+            //lvl = SceneManager.GetActiveScene().buildIndex;
         }
-
     }
 }
