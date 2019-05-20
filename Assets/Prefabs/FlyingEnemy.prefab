@@ -172,6 +172,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flyHealth: 1
+  enemyMinorBloodSplatter: {fileID: 3809475754495388339, guid: 2ed22fb889b0f8c45bcac8cba43745e1,
+    type: 3}
+  enemyBloodSplatter: {fileID: 1300707835625551980, guid: 55457a724c352bc4499080baf864f519,
+    type: 3}
 --- !u!95 &1218050051
 Animator:
   serializedVersion: 3

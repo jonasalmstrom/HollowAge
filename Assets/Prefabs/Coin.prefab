@@ -116,7 +116,8 @@ MonoBehaviour:
     type: 3}
   coin: 1
   coinSound: {fileID: 8300000, guid: 9155866583c940f42909e2c103f7e708, type: 3}
-  waitOnDestroy: 10
+  coinSlider: {fileID: 0}
+  cam: {fileID: 0}
 --- !u!82 &8831590747383189352
 AudioSource:
   m_ObjectHideFlags: 0
